@@ -21,8 +21,8 @@ ui <- fluidPage(
         h2("Simuler forskjellige parameterverdier for funksjonell respons type II"),
         p("Pannelene under endrer paramtrene a, T og h i funksjonell respons type II likninga."),
         p(""),
-        p("E = (a*T*N) / (1 + (a*h*N))"),
-        p("E er energi inn (en eller annen enhet for næringsinntak), a er angrepsraten, T er total tid brukt i søk etter bytte, Th er behandlingstid på hvert bytter og N er totalt antall bytte tilgjengelig (byttetetthet)"),
+        p("E = (a*Ttot*N) / (1 + (a*Th*N))"),
+        p("E er energi inn (en eller annen enhet for næringsinntak), a er angrepsraten, Ttot er total tid brukt i søk etter bytte, Th er behandlingstid på hvert bytter og N er totalt antall bytte tilgjengelig (byttetetthet)"),
          sliderInput("a",
                      "Angrepsrate (a):",
                      min = 1,
@@ -34,13 +34,14 @@ ui <- fluidPage(
                      max = 50,
                      value = 30),
          sliderInput("h",
-                     "Håndteringstid for hvert bytte (h):",
+                     "Håndteringstid for hvert bytte (Th):",
                      min = 0.00000000001,
                      max = 0.1,
                      value = 0.05),
         p(""),
         p("Endre parametre i pannelet over og se resultatene på grafen til høyre (eller under i tilfelle mobilversjon)"),
         p("")
+        tags$a(href="https://github.com/andersfi/functional_response_temp", "Source code")
       ),
       
       # Show a plot 
